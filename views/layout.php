@@ -16,6 +16,11 @@
         </div>
     </div>
 
+    <!-- si no hay variable en el script imprime vacio para no dar errores -->
+    <?php 
+        echo $script ?? '';
+    ?>
+
 
             
 </body>
