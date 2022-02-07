@@ -1,6 +1,11 @@
 <h1 class='nombre-pagina'>Crear Nueva Cita</h1>
 <p class="descripcion-pagina">Eliges tus servicios y coloca tus datos</p>
 
+<?php 
+ include_once __DIR__ . '/../templates/barra.php';
+?>
+
+
 <div id="app">
 
     <nav class="tabs">
@@ -36,6 +41,7 @@
                 <input 
                     type="date"
                     id="fecha"
+                    min="<?php echo date('Y-m-d', strtotime('+1 day')); ?>"
                 >
             </div>
 
@@ -46,10 +52,11 @@
                     id="hora"
                 >
             </div>
+            <input type="hidden" id="id" value="<?php echo $id; ?>">
         </form>
     </div>
 
-    <div id="paso-3" class="seccion">
+    <div id="paso-3" class="seccion contenido-mensaje">
         <h2>Resumen</h2>
         <p class="text-center">Verifica que la informacion sea correcta</p>
     </div>
@@ -71,6 +78,7 @@
 <?php 
     $script = 
     "
+        <script src='//cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script src='build/js/app.js'></script>
     ";
 ?>
